@@ -103,7 +103,6 @@ public:
         {
             getline(file, line);
 
-            int c = 5000;
             while (getline(file, line) && c!=0)
             {
                 vector<string> parsedLine = parseCSVLine(line);
@@ -115,7 +114,7 @@ public:
                     recipe.ingredients = splitIngredients(parsedLine[3]);
                     tree.insertRecipe(recipe.title, recipe.ingredients, recipe.directions);
                 }
-                c--;
+
             }
             file.close();
         }
